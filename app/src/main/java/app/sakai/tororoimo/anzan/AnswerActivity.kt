@@ -27,6 +27,14 @@ class AnswerActivity : AppCompatActivity() {
 
         backButton.setOnClickListener {
             val questionPage = Intent(this, MainActivity::class.java)
+            questionPage.putExtra("MODE", false)
+            startActivity(questionPage)
+            finish()
+        }
+
+        retryButton.setOnClickListener {
+            val questionPage = Intent(this, MainActivity::class.java)
+            questionPage.putExtra("MODE", true)
             startActivity(questionPage)
             finish()
         }

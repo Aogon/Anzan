@@ -55,4 +55,15 @@
         android:fontFamily="sans-serif-black"
         android:text="もどる"
         android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/retryButton"
+        android:layout_width="320dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="1"
+        android:background="@drawable/background_rounded_courners"
+        android:fontFamily="sans-serif-black"
+        android:text="もう一度"
+        android:textSize="24sp" />
 </LinearLayout>
