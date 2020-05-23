@@ -11,14 +11,13 @@ class AnswerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_answer)
 
-        val displayQuestion = intent.getStringExtra("question")
-        val yourAnswer = intent.getStringExtra("answer")
-        val correctAnswer = intent.getStringExtra("correct")
+        val numberCorrectAnswer = intent.getIntExtra("numberCorrectAnswer", 0)
+        val numberWrongAnswer = intent.getIntExtra("numberWrongAnswer", 0)
 
-        questionText.text = displayQuestion
-        yourAnswerText.text = yourAnswer
+        questionText.text = "不正解数： " + numberWrongAnswer.toString()
+        yourAnswerText.text = "正解数： " + numberCorrectAnswer.toString()
 
-        if (yourAnswer == correctAnswer) {
+        if (numberCorrectAnswer > 3) {
             markImage.setImageResource(R.drawable.correct_image)
             randyImage.setImageResource(R.drawable.randy_happy_image)
         } else {
