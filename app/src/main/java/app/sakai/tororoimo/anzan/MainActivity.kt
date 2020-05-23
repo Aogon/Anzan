@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val randomNumber1 = Random.nextInt(1000)
-        val randomNumber2 = Random.nextInt(1000)
+        val randomNumber1 = 10 + Random.nextInt(11)
+        val randomNumber2 = 10 + Random.nextInt(11)
 
         number1Text.text = randomNumber1.toString()
         number2Text.text = randomNumber2.toString()
