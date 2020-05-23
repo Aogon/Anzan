@@ -25,26 +25,8 @@ class MainActivity : AppCompatActivity() {
         var numberCorrectAnswer = 0
         var numberWrongAnswer = 0
 
-
-        number1Text.text = randomNumber1.toString()
-        number2Text.text = randomNumber2.toString()
-
-        signText.text = operatorText
-        correctAnswer = randomNumber1 * randomNumber2
+        createQuestion()
         questionNumber++
-
-
-        randomNumber1 = 10 + Random.nextInt(11)
-        randomNumber2 = 10 + Random.nextInt(11)
-
-        number1Text.text = randomNumber1.toString()
-        number2Text.text = randomNumber2.toString()
-
-
-        signText.text = operatorText
-        correctAnswer = randomNumber1 * randomNumber2
-
-
 
         checkButton.setOnClickListener {
             if (questionNumber < 5) {
@@ -59,14 +41,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                randomNumber1 = 10 + Random.nextInt(11)
-                randomNumber2 = 10 + Random.nextInt(11)
-
-                number1Text.text = randomNumber1.toString()
-                number2Text.text = randomNumber2.toString()
-
-                signText.text = operatorText
-                correctAnswer = randomNumber1 * randomNumber2
+                createQuestion()
                 questionNumber++
 
             } else if (questionNumber == 5) {
@@ -81,8 +56,6 @@ class MainActivity : AppCompatActivity() {
                         numberWrongAnswer++
                     }
                     val answerPage = Intent(this, AnswerActivity::class.java)
-                    val questionText =
-                        randomNumber1.toString() + operatorText + randomNumber2.toString() + " ="
                     answerPage.putExtra("numberCorrectAnswer", numberCorrectAnswer)
                     answerPage.putExtra("numberWrongAnswer", numberWrongAnswer)
                     startActivity(answerPage)
@@ -90,5 +63,16 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    fun createQuestion() {
+        randomNumber1 = 10 + Random.nextInt(11)
+        randomNumber2 = 10 + Random.nextInt(11)
+
+        number1Text.text = randomNumber1.toString()
+        number2Text.text = randomNumber2.toString()
+
+        signText.text = operatorText
+        correctAnswer = randomNumber1 * randomNumber2
     }
 }
