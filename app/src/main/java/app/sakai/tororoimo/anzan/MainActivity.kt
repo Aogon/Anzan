@@ -18,19 +18,12 @@ class MainActivity : AppCompatActivity() {
         number1Text.text = randomNumber1.toString()
         number2Text.text = randomNumber2.toString()
 
-        val randomOperator = Random.nextInt(2)
-        var operatorText = ""
+        val operatorText = " × "
         var correctAnswer = 0
 
-        if (randomOperator == 0) {
-            operatorText = " + "
-            signText.text = operatorText
-            correctAnswer = randomNumber1 + randomNumber2
-        } else {
-            operatorText = " - "
-            signText.text = operatorText
-            correctAnswer = randomNumber1 - randomNumber2
-        }
+        signText.text = operatorText
+        correctAnswer = randomNumber1 * randomNumber2
+
 
 
         checkButton.setOnClickListener {
